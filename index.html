@@ -12,7 +12,9 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <link href="//vjs.zencdn.net/5.4/video-js.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="demion.css" />
 </head>
 
 <body>
@@ -31,9 +33,45 @@ http://wms.stagecloud.io/vodgs/_definst_/gs/FrankyBandWagon_RoofSession.mp4/play
 
 <div class="fullscreen-video-player">
     <!-- TODO - insert video player markup here-->
-    <video>
+   <!--
+          -- Your video element. Just like regular HTML5 video.
+          -->
+       <video id="fullscreen-video-player" class="video-js vjs-skin-colors-green"
+         controls preload="auto" width="580" height="370"
+         poster=""
+         data-setup='{ }'>
+             
+     <source src="wms.stagecloud.io/vodgs/_definst_/gs/FrankyBandWagon_RoofSession.mp4/playlist.m3u8"
+             type="application/x-mpegURL">
+       </video>
+        
+        
+ <!--------------------------------------------------------------------------
+      --                      videojs-contrib-hls setup                       --
+      ------------------------------------------------------------------------!>
 
-    </video>
+    <!--
+      -- Make sure to include the video.js CSS. This could go in
+      -- the <head>, too.
+      -->
+
+
+    <!--
+      -- Include video.js and videojs-contrib-hls in your page
+      -->
+
+    <script src="//vjs.zencdn.net/5.4/video.js"></script>
+    <script src="http://videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-hls/dist/videojs.hls.min.js"></script>
+ 
+    <script src="swfobject.js"></script>
+    
+    <!--
+      -- Now, initialize your player. That's it!
+      -->
+    <script>
+      var player = videojs('fullscreen-video-player');
+    </script>
+      
 </div>
 
 
