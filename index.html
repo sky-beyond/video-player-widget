@@ -13,6 +13,14 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    
+  <link href="//vjs.zencdn.net/5.4/video-js.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="http://xaphanentertainment.com/my-adsplayer/player-garry/demion.css" />
+  <link href="http://xaphanentertainment.com/my-adsplayer/player-garry/vpaid/bin/videojs.vast.vpaid.min.css" rel="stylesheet">
+  <script src="http://xaphanentertainment.com/my-adsplayer/player-garry/vpaid/bin/es5-shim.js"></script>
+  <script src="http://xaphanentertainment.com/my-adsplayer/player-garry/vpaid/bin/ie8fix.js"></script>
+   <link href="http://xaphanentertainment.com/my-adsplayer/player-garry/lib/videojs.ads.css" rel="stylesheet">
+  <link href="http://xaphanentertainment.com/my-adsplayer/player-garry/src/videojs-preroll.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -31,13 +39,38 @@ http://wms.stagecloud.io/vodgs/_definst_/gs/FrankyBandWagon_RoofSession.mp4/play
 
 <div class="fullscreen-video-player">
     <!-- TODO - insert video player markup here-->
-    <video>
-
-    </video>
+   <video id="example_video_1" class="video-js vjs-skin-colors-orange"
+         controls preload="auto" width="580" height="370"
+         poster=""
+         data-setup='{ }'>
+             
+     <source src="http://wms.stagecloud.io/vodgs/_definst_/gs/FrankyBandWagon_RoofSession.mp4/playlist.m3u8"
+             type="application/x-mpegURL">
+       </video>
+        
 </div>
 
 
-
+ <script src="//vjs.zencdn.net/5.4/video.js"></script>
+    <script src="http://videojs.github.io/videojs-contrib-hls/node_modules/videojs-contrib-hls/dist/videojs.hls.min.js"></script>
+ 
+    <script src="http://xaphanentertainment.com/my-adsplayer/player-garry/lib/videojs.ads.js"></script>
+  <script src="http://xaphanentertainment.com/my-adsplayer/player-garry/src/videojs-preroll.js"></script>
+  <script>
+    // fire up the plugin
+    videojs('example_video_1',{},function(){
+      var player = this;
+      player.preroll({
+        src:{src:"http://vod.stagecloud.co/assets/stagecloud-preroll-master_1080_kqr2iw.mp4",type:"video/mp4"},
+        href:"http://videojs.com",
+        adsOptions: {debug:true}
+      });
+    });
+  </script>
+  
+   <script>
+      var player = videojs('example_video_1');
+    </script>
 
 <a href="javascript:history.back()" class="back-button">
     <i class="fa fa-arrow-left fa-2x"></i>
